@@ -2559,3 +2559,20 @@ body.event-modal-is-open {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Keep readable body copy consistent across all mobile layouts. */
+@media (max-width: 760px) {
+  main p:not([class*="eyebrow"]):not([class*="kicker"]):not([class*="label"]):not([class*="date"]):not([class*="role"]):not([class*="status"]):not([class*="month"]),
+  main li,
+  main figcaption,
+  main label,
+  main input,
+  main select,
+  main textarea,
+  .site-footer p,
+  .site-footer address,
+  .site-footer address span,
+  .site-footer a {
+    font-size: 16px !important;
+  }
+}

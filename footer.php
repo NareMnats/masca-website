@@ -43,7 +43,7 @@
             rel="noopener noreferrer"
           >
             Ashiya Cosmopolitan Association
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true">⟶</span>
           </a>
 
           <div class="site-footer__social-links" aria-label="Follow MASCA">

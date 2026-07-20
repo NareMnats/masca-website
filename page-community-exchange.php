@@ -205,7 +205,7 @@ $image_base = get_theme_file_uri('/assets/images/community-exchange');
                 >
                     <span class="ce-article-card__date">April 2026</span>
                     <h3>Ashiya Delegation to Celebrate 65 Years of Friendship in Montebello</h3>
-                    <span class="ce-article-card__source">Rafu Shimpo <span aria-hidden="true">↗</span></span>
+                    <span class="ce-article-card__source">Rafu Shimpo <span aria-hidden="true">⟶</span></span>
                 </a>
 
                 <a
@@ -216,7 +216,7 @@ $image_base = get_theme_file_uri('/assets/images/community-exchange');
                 >
                     <span class="ce-article-card__date">December 2016</span>
                     <h3>Montebello Group Travels to Ashiya to Celebrate 55 Years of Friendship</h3>
-                    <span class="ce-article-card__source">Rafu Shimpo <span aria-hidden="true">↗</span></span>
+                    <span class="ce-article-card__source">Rafu Shimpo <span aria-hidden="true">⟶</span></span>
                 </a>
             </div>
         </div>

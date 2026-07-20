@@ -52,7 +52,7 @@ $theme_path = get_template_directory();
             href="<?php echo esc_url(home_url('/what-is-masca/')); ?>"
         >
             Discover MASCA
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true">⟶</span>
         </a>
     </div>
 </section>
@@ -132,7 +132,7 @@ Each summer, our Student Ambassador Exchange program celebrates this connection 
                 href="<?php echo esc_url(home_url('/2026-ambassadors/')); ?>"
             >
                 Read their stories
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true">⟶</span>
             </a>
         </div>
 
@@ -225,7 +225,7 @@ Each summer, our Student Ambassador Exchange program celebrates this connection 
                 href="<?php echo esc_url(home_url('/history/')); ?>"
             >
                 Learn about our history
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true">⟶</span>
             </a>
         </div>
 
@@ -259,7 +259,7 @@ Each summer, our Student Ambassador Exchange program celebrates this connection 
                 href="<?php echo esc_url(home_url('/application/')); ?>"
             >
                 View the program
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true">⟶</span>
             </a>
         </div>
 

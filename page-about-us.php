@@ -160,7 +160,7 @@ $theme_uri = get_template_directory_uri();
                     href="<?php echo esc_url(home_url('/history/')); ?>"
                 >
                     Explore our history
-                    <span aria-hidden="true">↗</span>
+                    <span aria-hidden="true">⟶</span>
                 </a>
             </div>
         </div>
