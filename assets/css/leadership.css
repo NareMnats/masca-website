@@ -1,0 +1,174 @@
+/* MASCA Leadership page */
+
+.masca-leadership-page {
+    --leadership-ink: #202727;
+    --leadership-muted: #5f6968;
+    --leadership-accent: #0f7773;
+    --leadership-surface: #f3f6f5;
+    --leadership-line: rgba(32, 39, 39, 0.14);
+    color: var(--leadership-ink);
+}
+
+.leadership-container {
+    width: min(1180px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+.leadership-intro {
+    padding: clamp(88px, 12vw, 156px) 0 clamp(64px, 8vw, 104px);
+}
+
+.leadership-intro__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(320px, 0.9fr);
+    column-gap: clamp(48px, 9vw, 120px);
+    align-items: end;
+}
+
+.leadership-eyebrow {
+    grid-column: 1 / -1;
+    margin: 0 0 22px;
+    color: var(--leadership-accent);
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.leadership-intro h1 {
+    margin: 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(2.8rem, 6.3vw, 6.3rem);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 0.95;
+}
+
+.leadership-intro__copy {
+    max-width: 620px;
+    margin: 0;
+    color: var(--leadership-muted);
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: clamp(1rem, 1.15vw, 1.125rem);
+    line-height: 1.85;
+}
+
+.leadership-roster {
+    padding: 0 0 clamp(96px, 12vw, 168px);
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: clamp(24px, 3vw, 42px);
+}
+
+.leader-card {
+    grid-column: span 4;
+    min-width: 0;
+}
+
+.leader-card:nth-child(4) {
+    grid-column: 3 / span 4;
+}
+
+.leader-card:nth-child(5) {
+    grid-column: 7 / span 4;
+}
+
+.leader-card__image-wrap {
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    background: var(--leadership-surface);
+    border-radius: 50%;
+}
+
+.leader-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.01);
+    transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.leader-card:hover .leader-card__image {
+    transform: scale(1.035);
+}
+
+.leader-card__content {
+    padding: 20px 4px 8px;
+    border-bottom: 1px solid var(--leadership-line);
+}
+
+.leader-card__position {
+    margin: 0 0 7px;
+    color: var(--leadership-accent);
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.leader-card__name {
+    margin: 0 0 20px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.05;
+}
+
+@media (max-width: 900px) {
+    .leadership-intro__inner {
+        grid-template-columns: 1fr;
+        row-gap: 28px;
+        align-items: start;
+    }
+
+    .leadership-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .leader-card,
+    .leader-card:nth-child(4),
+    .leader-card:nth-child(5) {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .leadership-container {
+        width: min(100% - 28px, 1180px);
+    }
+
+    .leadership-intro {
+        padding-top: 72px;
+    }
+
+    .leadership-intro h1 {
+        font-size: clamp(2.52rem, 12.6vw, 4.2rem);
+    }
+
+    .leadership-intro__copy {
+        font-size: 0.8rem;
+        line-height: 1.75;
+    }
+
+    .leadership-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .leader-card__image-wrap {
+        border-radius: 50%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .leader-card__image {
+        transition: none;
+    }
+}

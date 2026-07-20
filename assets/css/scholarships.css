@@ -1,0 +1,27 @@
+body .scholarships-page{font-family:Manrope,sans-serif;color:#202425}
+.sp-container{width:min(1100px,calc(100% - 48px));margin:auto}
+.sp-narrow{max-width:760px}
+.sp-section{padding:90px 0}
+.sp-alt{background:#f3f7f6}
+.sp-hero{background:#0a5350;color:#fff;padding:70px 0}
+.sp-eyebrow,.sp-kicker{text-transform:uppercase;letter-spacing:.16em;color:#0f7773;font-size:.75rem;font-weight:700}
+.sp-hero .sp-eyebrow{color:#bfe7e4}
+.sp-hero .sp-eyebrow{margin:0 0 12px}
+.sp-hero h1{margin:0 0 16px}
+.sp-hero .sp-lead{margin:0}
+h1,h2{font-family:"Cormorant Garamond",serif;font-weight:500}
+h1{font-size:clamp(3.5rem,8vw,7rem)}
+h2{font-size:clamp(2.5rem,5vw,4.5rem)}
+.sp-host-award-title{line-height:.8}
+.sp-lead{max-width:650px;color:#e4f2f1}
+.sp-callout{border:1px solid #dce3e2;padding:36px;background:#faf8f3}
+.sp-callout ul,.sp-checklist{margin:0;padding-left:1.25rem}
+.sp-checklist li,.sp-callout li{margin:0 0 16px}
+.sp-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:40px}
+.sp-btn{text-decoration:none;padding:14px 24px;border-radius:999px;font-weight:700}
+.primary{background:#0f7773;color:#fff}
+.secondary{border:1px solid #0f7773;color:#0f7773}
+
+@media (max-width:720px){
+.sp-hero h1{line-height:.82}
+}
