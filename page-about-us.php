@@ -9,6 +9,7 @@ get_header();
 $theme_uri = get_template_directory_uri();
 ?>
 
+<main id="main-content">
 <article class="about-page">
     <header class="about-hero">
         <div class="site-container about-hero__grid">
@@ -35,6 +36,10 @@ $theme_uri = get_template_directory_uri();
                         $theme_uri . '/assets/images/navigation/about.png'
                     ); ?>"
                     alt="Participants in the Montebello-Ashiya sister-city program"
+                    width="2144"
+                    height="1602"
+                    loading="eager"
+                    fetchpriority="high"
                 >
             </figure>
         </div>
@@ -243,5 +248,6 @@ $theme_uri = get_template_directory_uri();
         </div>
     </section>
 </article>
+</main>
 
 <?php get_footer(); ?>

@@ -10,6 +10,7 @@ $theme_uri = get_template_directory_uri();
 $theme_path = get_template_directory();
 ?>
 
+<main id="main-content">
 <section class="home-hero">
     <div class="home-hero__media">
         <video
@@ -87,6 +88,9 @@ Each summer, our Student Ambassador Exchange program celebrates this connection 
                 ); ?>"
                 alt="President of the Montebello-Ashiya Sister City Association"
                 loading="lazy"
+                decoding="async"
+                width="1828"
+                height="2560"
             >
 
             <figcaption class="president-feature__attribution">
@@ -543,5 +547,7 @@ Each summer, our Student Ambassador Exchange program celebrates this connection 
         </div>
     </div>
 </section>
+
+</main>
 
 <?php get_footer(); ?>

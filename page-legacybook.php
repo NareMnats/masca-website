@@ -30,7 +30,7 @@ $aca_presidents = [
 ];
 ?>
 
-<main class="masca-legacy-page">
+<main id="main-content" class="masca-legacy-page">
     <section class="legacy-hero">
         <div class="legacy-container legacy-hero__inner">
             <div class="legacy-hero__copy">
@@ -41,7 +41,7 @@ $aca_presidents = [
                 <p class="legacy-years">Montebello-Ashiya Sister City Affiliation Association and the Student Exchange Ambassador Program, 1961-2011</p>
                 <div class="legacy-actions">
                     <a class="legacy-button legacy-button--primary" href="#legacy-story">Read the legacy</a>
-                    <a class="legacy-button legacy-button--secondary" href="<?php echo esc_url($legacy_pdf_uri); ?>" target="_blank" rel="noopener">Download the original book</a>
+                    <a class="legacy-button legacy-button--secondary" href="<?php echo esc_url($legacy_pdf_uri); ?>" target="_blank" rel="noopener noreferrer">Download the original book</a>
                 </div>
             </div>
 
@@ -184,7 +184,7 @@ $aca_presidents = [
                 <h2>Read the book as it appeared in 2011</h2>
                 <p>The downloadable PDF preserves the original six-page publication, including its typography, page composition and archival imagery.</p>
             </div>
-            <a class="legacy-button legacy-button--light" href="<?php echo esc_url($legacy_pdf_uri); ?>" target="_blank" rel="noopener">Download the Legacy Book PDF</a>
+            <a class="legacy-button legacy-button--light" href="<?php echo esc_url($legacy_pdf_uri); ?>" target="_blank" rel="noopener noreferrer">Download the Legacy Book PDF</a>
         </div>
     </section>
 </main>

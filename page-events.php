@@ -10,7 +10,7 @@ $event_types = get_terms(array(
 ));
 ?>
 
-<main id="primary" class="events-page">
+<main id="main-content" class="events-page">
     <section class="events-hero">
         <div class="events-container events-hero__inner">
             <p class="events-eyebrow">Montebello–Ashiya Sister City Association</p>
@@ -36,8 +36,10 @@ $event_types = get_terms(array(
             </div>
 
             <div class="events-toolbar">
+                <label class="screen-reader-text" for="events-search-input">Search events</label>
                 <input id="events-search-input" type="search" placeholder="Search events">
 
+                <label class="screen-reader-text" for="events-type-filter">Filter by event type</label>
                 <select id="events-type-filter">
                     <option value="">All event types</option>
                     <?php if (!is_wp_error($event_types)) : ?>
@@ -49,11 +51,12 @@ $event_types = get_terms(array(
                     <?php endif; ?>
                 </select>
 
+                <label class="screen-reader-text" for="events-year-filter">Filter by year</label>
                 <select id="events-year-filter">
                     <option value="">All years</option>
                 </select>
 
-                <div class="events-view-switcher">
+                <div class="events-view-switcher" role="group" aria-label="Calendar view">
                     <button type="button" class="is-active" data-events-view="dayGridMonth">Month</button>
                     <button type="button" data-events-view="listYear">List</button>
                 </div>

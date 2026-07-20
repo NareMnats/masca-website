@@ -27,7 +27,7 @@ get_header();
 $image_base = get_theme_file_uri('/assets/images/community-exchange');
 ?>
 
-<main id="primary" class="community-exchange-page">
+<main id="main-content" class="community-exchange-page">
     <section class="ce-hero" aria-labelledby="community-exchange-title">
         <div class="ce-container ce-hero__inner">
             <div class="ce-hero__content">
@@ -44,6 +44,8 @@ $image_base = get_theme_file_uri('/assets/images/community-exchange');
                 <img
                     src="<?php echo esc_url($image_base . '/ashiya-delegation-arrival-montebello-2026.jpg'); ?>"
                     alt="An Ashiya delegation walking through Montebello during the 2026 community exchange"
+                    width="1536"
+                    height="1024"
                     fetchpriority="high"
                 >
             </figure>
@@ -96,7 +98,10 @@ $image_base = get_theme_file_uri('/assets/images/community-exchange');
                     <img
                         src="<?php echo esc_url($image_base . '/ashiya-montebello-delegation-city-hall-2026.jpg'); ?>"
                         alt="Montebello and Ashiya representatives gathered inside Montebello City Hall"
+                        width="1536"
+                        height="1024"
                         loading="lazy"
+                        decoding="async"
                     >
                     <figcaption>
                         Montebello and Ashiya representatives gather at Montebello City Hall.
@@ -107,7 +112,10 @@ $image_base = get_theme_file_uri('/assets/images/community-exchange');
                     <img
                         src="<?php echo esc_url($image_base . '/mayors-city-key-exchange-2026.jpg'); ?>"
                         alt="Montebello and Ashiya representatives presenting ceremonial city keys"
+                        width="1536"
+                        height="864"
                         loading="lazy"
+                        decoding="async"
                     >
                     <figcaption>
                         Representatives exchange ceremonial keys during the 2026 visit.
@@ -118,7 +126,10 @@ $image_base = get_theme_file_uri('/assets/images/community-exchange');
                     <img
                         src="<?php echo esc_url($image_base . '/montebello-ashiya-delegation-2026.jpg'); ?>"
                         alt="Montebello and Ashiya delegation members standing together outdoors"
+                        width="1536"
+                        height="1152"
                         loading="lazy"
+                        decoding="async"
                     >
                     <figcaption>
                         Delegation members and city representatives during the anniversary exchange.
@@ -133,7 +144,10 @@ $image_base = get_theme_file_uri('/assets/images/community-exchange');
             <img
                 src="<?php echo esc_url($image_base . '/community-exchange-gathering-2026.jpg'); ?>"
                 alt="MASCA, ACA, city officials, and community supporters gathered outdoors in Montebello"
+                width="1536"
+                height="1152"
                 loading="lazy"
+                decoding="async"
             >
             <figcaption class="ce-container">
                 MASCA, ACA, city officials, community members, and supporters gather
@@ -148,7 +162,10 @@ $image_base = get_theme_file_uri('/assets/images/community-exchange');
                 <img
                     src="<?php echo esc_url($image_base . '/ashiya-montebello-awards.jpg'); ?>"
                     alt="Montebello and Ashiya representatives holding commemorative Ashiya Way awards"
+                    width="4032"
+                    height="3024"
                     loading="lazy"
+                    decoding="async"
                 >
             </div>
 

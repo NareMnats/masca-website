@@ -11,7 +11,7 @@ $guidebook_path       = get_template_directory() . '/assets/documents/parent-fam
 $guidebook_url        = get_template_directory_uri() . '/assets/documents/parent-family-guidebook.pdf';
 ?>
 
-<main id="primary" class="ambassador-program-page">
+<main id="main-content" class="ambassador-program-page">
     <section class="ap-hero">
         <div class="ap-container ap-hero__inner">
             <div class="ap-hero__content">

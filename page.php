@@ -10,6 +10,7 @@ get_header();
 <?php while (have_posts()) : ?>
     <?php the_post(); ?>
 
+    <main id="main-content">
     <article <?php post_class('standard-page'); ?>>
         <header class="standard-page__header">
             <div class="site-container standard-page__header-inner">
@@ -29,6 +30,7 @@ get_header();
                     <?php
                     the_post_thumbnail('full', [
                         'loading' => 'eager',
+                        'fetchpriority' => 'high',
                     ]);
                     ?>
                 </figure>
@@ -39,6 +41,7 @@ get_header();
             </div>
         </div>
     </article>
+    </main>
 <?php endwhile; ?>
 
 <?php get_footer(); ?>

@@ -85,7 +85,7 @@ $ambassador_decades = [
 ];
 ?>
 
-<main class="masca-ambassadors-page">
+<main id="main-content" class="masca-ambassadors-page">
     <section class="ambassadors-intro">
         <div class="ambassadors-container ambassadors-intro__inner">
             <p class="ambassadors-eyebrow">Ambassador Program</p>

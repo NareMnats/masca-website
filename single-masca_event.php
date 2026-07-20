@@ -19,7 +19,7 @@ while (have_posts()) :
     $ics_url          = add_query_arg('masca_ics', get_the_ID(), home_url('/'));
     ?>
 
-    <main id="primary" class="event-single">
+    <main id="main-content" class="event-single">
         <article <?php post_class(); ?>>
             <section class="event-single-hero">
                 <div class="events-container event-single-hero__inner">
@@ -93,13 +93,13 @@ while (have_posts()) :
 
                         <div class="event-detail-actions">
                             <?php if (!$is_past && $registration_url) : ?>
-                                <a class="event-button primary" href="<?php echo esc_url($registration_url); ?>" target="_blank" rel="noopener">
+                                <a class="event-button primary" href="<?php echo esc_url($registration_url); ?>" target="_blank" rel="noopener noreferrer">
                                     RSVP / Register
                                 </a>
                             <?php endif; ?>
 
                             <?php if ($maps_url) : ?>
-                                <a class="event-button secondary" href="<?php echo esc_url($maps_url); ?>" target="_blank" rel="noopener">
+                                <a class="event-button secondary" href="<?php echo esc_url($maps_url); ?>" target="_blank" rel="noopener noreferrer">
                                     Directions
                                 </a>
                             <?php endif; ?>

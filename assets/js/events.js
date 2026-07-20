@@ -74,10 +74,10 @@
         const actions = [
             `<a class="event-button primary" href="${event.url}">View Full Details</a>`,
             props.registrationUrl && eventStatus !== "Past Event"
-                ? `<a class="event-button primary" href="${props.registrationUrl}" target="_blank" rel="noopener">RSVP / Register</a>`
+                ? `<a class="event-button primary" href="${props.registrationUrl}" target="_blank" rel="noopener noreferrer">RSVP / Register</a>`
                 : "",
             props.mapsUrl
-                ? `<a class="event-button secondary" href="${props.mapsUrl}" target="_blank" rel="noopener">Directions</a>`
+                ? `<a class="event-button secondary" href="${props.mapsUrl}" target="_blank" rel="noopener noreferrer">Directions</a>`
                 : "",
             props.icsUrl
                 ? `<a class="event-button secondary" href="${props.icsUrl}">Add to Calendar</a>`
@@ -88,7 +88,7 @@
         ].join("");
 
         dialogContent.innerHTML = `
-            ${props.imageUrl ? `<img class="event-dialog__image" src="${props.imageUrl}" alt="">` : ""}
+            ${props.imageUrl ? `<img class="event-dialog__image" src="${props.imageUrl}" alt="" loading="lazy" decoding="async">` : ""}
             <div class="event-dialog__body">
                 <p class="event-dialog__status">${escapeHtml(eventStatus)}</p>
                 <h2>${escapeHtml(event.title)}</h2>

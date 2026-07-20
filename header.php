@@ -11,14 +11,14 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body id="page-top" <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
 <a class="skip-link" href="#main-content">
     Skip to content
 </a>
 
-<header class="site-header">
+<header id="site-header" class="site-header">
     <div class="site-container site-header__inner">
         <div class="site-branding">
             <?php if (has_custom_logo()) : ?>
@@ -72,6 +72,10 @@
                 '/assets/images/navigation/nav-default.png'
             ); ?>"
             alt=""
+            width="899"
+            height="1602"
+            loading="lazy"
+            decoding="async"
         >
 
         <div class="menu-panel__media-overlay"></div>
@@ -120,5 +124,3 @@
         </div>
     </div>
 </aside>
-
-<main id="main-content">

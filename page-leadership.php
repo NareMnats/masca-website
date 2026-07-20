@@ -41,7 +41,7 @@ $leaders = [
 ];
 ?>
 
-<main id="primary" class="masca-leadership-page">
+<main id="main-content" class="masca-leadership-page">
     <section class="leadership-intro" aria-labelledby="leadership-title">
         <div class="leadership-container leadership-intro__inner">
             <p class="leadership-eyebrow">About MASCA</p>

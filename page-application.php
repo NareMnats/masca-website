@@ -11,7 +11,7 @@ $application_url    = get_template_directory_uri() . '/assets/documents/Student_
 $application_exists = file_exists( $application_path );
 ?>
 
-<main id="primary" class="application-page">
+<main id="main-content" class="application-page">
     <section class="app-hero">
         <div class="app-container app-hero__inner">
             <p class="app-eyebrow">Montebello–Ashiya Sister City Association</p>
@@ -64,7 +64,7 @@ $application_exists = file_exists( $application_path );
                     <a class="app-button app-button--primary" href="<?php echo esc_url( $application_url ); ?>" download>
                         Download 2026 Application
                     </a>
-                    <a class="app-button app-button--secondary" href="<?php echo esc_url( $application_url ); ?>" target="_blank" rel="noopener">
+                    <a class="app-button app-button--secondary" href="<?php echo esc_url( $application_url ); ?>" target="_blank" rel="noopener noreferrer">
                         Open PDF in New Tab
                     </a>
                 </div>
@@ -85,7 +85,7 @@ $application_exists = file_exists( $application_path );
                                 <a class="app-button app-button--primary" href="<?php echo esc_url( $application_url ); ?>" download>
                                     Download Application
                                 </a>
-                                <a class="app-button app-button--secondary" href="<?php echo esc_url( $application_url ); ?>" target="_blank" rel="noopener">
+                                <a class="app-button app-button--secondary" href="<?php echo esc_url( $application_url ); ?>" target="_blank" rel="noopener noreferrer">
                                     Open PDF
                                 </a>
                             </div>

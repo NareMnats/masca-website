@@ -12,7 +12,7 @@ get_header();
 $theme_uri = get_template_directory_uri();
 ?>
 
-<main id="primary" class="masca-donate-page">
+<main id="main-content" class="masca-donate-page">
     <section class="donate-intro" aria-labelledby="donate-title">
         <div class="donate-container donate-intro__inner">
             <p class="donate-eyebrow">Support MASCA</p>
@@ -28,6 +28,10 @@ $theme_uri = get_template_directory_uri();
             class="donate-hero__image"
             src="<?php echo esc_url($theme_uri . '/assets/images/donate/donate-hero.jpg'); ?>"
             alt="MASCA student ambassadors and community representatives gathered at Montebello City Hall"
+            width="1536"
+            height="577"
+            loading="eager"
+            fetchpriority="high"
         >
     </figure>
 
@@ -49,6 +53,10 @@ $theme_uri = get_template_directory_uri();
                     class="donate-payment-card__image"
                     src="<?php echo esc_url($theme_uri . '/assets/images/donate/masca-zelle.png'); ?>"
                     alt="Zelle QR code for the Montebello-Ashiya Sister City Association"
+                    width="351"
+                    height="480"
+                    loading="lazy"
+                    decoding="async"
                 >
             </div>
 

@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main id="primary" class="galleries-page">
+<main id="main-content" class="galleries-page">
     <section class="gal-hero">
         <div class="gal-container gal-hero__inner">
             <p class="gal-eyebrow">Montebello–Ashiya Sister City Association</p>

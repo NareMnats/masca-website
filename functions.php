@@ -436,20 +436,28 @@ add_filter(
 
 function masca_custom_enqueue_assets(): void
 {
-    $theme_version = wp_get_theme()->get('Version');
+    $main_style_path = get_theme_file_path('/assets/css/main.css');
+    $main_script_path = get_theme_file_path('/assets/js/main.js');
+
+    wp_enqueue_style(
+        'masca-custom-fonts',
+        'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap',
+        [],
+        null
+    );
 
     wp_enqueue_style(
         'masca-custom-main',
-        get_template_directory_uri() . '/assets/css/main.css',
-        [],
-        $theme_version
+        get_theme_file_uri('/assets/css/main.css'),
+        ['masca-custom-fonts'],
+        file_exists($main_style_path) ? filemtime($main_style_path) : null
     );
 
     wp_enqueue_script(
         'masca-custom-main',
-        get_template_directory_uri() . '/assets/js/main.js',
+        get_theme_file_uri('/assets/js/main.js'),
         [],
-        $theme_version,
+        file_exists($main_script_path) ? filemtime($main_script_path) : null,
         true
     );
 
@@ -457,12 +465,64 @@ function masca_custom_enqueue_assets(): void
   'masca-custom-main',
   'mascaTheme',
   array(
-    'themeUrl' => get_template_directory_uri(),
+    'themeUrl' => get_theme_file_uri(),
     'homeUrl'  => home_url('/'),
   )
 );
 }
 add_action('wp_enqueue_scripts', 'masca_custom_enqueue_assets');
+
+/**
+ * Establish early connections only for the two hosts used by Google Fonts.
+ */
+function masca_custom_resource_hints(array $urls, string $relation_type): array
+{
+    if ($relation_type !== 'preconnect') {
+        return $urls;
+    }
+
+    $urls[] = 'https://fonts.googleapis.com';
+    $urls[] = [
+        'href'        => 'https://fonts.gstatic.com',
+        'crossorigin' => 'anonymous',
+    ];
+
+    return $urls;
+}
+add_filter('wp_resource_hints', 'masca_custom_resource_hints', 10, 2);
+
+/**
+ * Theme scripts are footer-safe and do not use document.write.
+ */
+function masca_custom_defer_theme_scripts(string $tag, string $handle): string
+{
+    $deferred_handles = [
+        'masca-custom-main',
+        'masca-history',
+        'masca-events',
+    ];
+
+    if (!in_array($handle, $deferred_handles, true) || strpos($tag, ' defer') !== false) {
+        return $tag;
+    }
+
+    return str_replace(' src=', ' defer src=', $tag);
+}
+add_filter('script_loader_tag', 'masca_custom_defer_theme_scripts', 10, 2);
+
+/**
+ * Contact Form 7 is only rendered by the Contact Us template.
+ */
+function masca_custom_limit_contact_form_assets(): void
+{
+    if (is_page(['contact-us', 'contact'])) {
+        return;
+    }
+
+    wp_dequeue_style('contact-form-7');
+    wp_dequeue_script('contact-form-7');
+}
+add_action('wp_enqueue_scripts', 'masca_custom_limit_contact_form_assets', 100);
 
 function masca_enqueue_history_page_assets() {
     if (!is_page_template('template-history.php')) {
@@ -489,7 +549,7 @@ function masca_enqueue_history_page_assets() {
 add_action('wp_enqueue_scripts', 'masca_enqueue_history_page_assets');
 
 function masca_enqueue_leadership_assets() {
-    if (is_page('leadership')) {
+    if (is_page(['leadership', 'meet-our-leaders'])) {
         wp_enqueue_style(
             'masca-leadership',
             get_stylesheet_directory_uri() . '/assets/css/leadership.css',
@@ -501,7 +561,7 @@ function masca_enqueue_leadership_assets() {
 add_action('wp_enqueue_scripts', 'masca_enqueue_leadership_assets');
 
 function masca_enqueue_past_ambassadors_assets() {
-    if (is_page('past-ambassadors')) {
+    if (is_page(['past-ambassadors', 'past-student-ambassadors'])) {
         wp_enqueue_style(
             'masca-past-ambassadors',
             get_template_directory_uri() . '/assets/css/past-ambassadors.css',
@@ -525,7 +585,7 @@ function masca_enqueue_donate_page_assets() {
 add_action('wp_enqueue_scripts', 'masca_enqueue_donate_page_assets');
 
 function masca_enqueue_legacybook_assets() {
-    if ( is_page( 'legacybook' ) ) {
+    if ( is_page( [ 'legacybook', 'legacy-book' ] ) ) {
         wp_enqueue_style(
             'masca-legacybook',
             get_template_directory_uri() . '/assets/css/legacybook.css',
@@ -573,7 +633,7 @@ function masca_enqueue_scholarships_assets() {
 add_action( 'wp_enqueue_scripts', 'masca_enqueue_scholarships_assets' );
 
 function masca_enqueue_contact_assets() {
-    if (is_page('contact-us')) {
+    if (is_page(['contact-us', 'contact'])) {
         $stylesheet_path = get_template_directory() . '/assets/css/contact.css';
         $stylesheet_version = file_exists($stylesheet_path)
             ? filemtime($stylesheet_path)
@@ -1035,21 +1095,7 @@ function masca_output_event_ics() {
 add_action('template_redirect', 'masca_output_event_ics');
 
 function masca_enqueue_event_assets() {
-    if (is_page('events') || is_singular('masca_event')) {
-        wp_enqueue_style(
-            'fullcalendar',
-            'https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.css',
-            array(),
-            '6.1.19'
-        );
-
-        wp_enqueue_style(
-            'masca-events',
-            get_template_directory_uri() . '/assets/css/events.css',
-            array('fullcalendar'),
-            wp_get_theme()->get('Version')
-        );
-
+    if (is_page('events')) {
         wp_enqueue_script(
             'fullcalendar',
             'https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js',
@@ -1060,9 +1106,9 @@ function masca_enqueue_event_assets() {
 
         wp_enqueue_script(
             'masca-events',
-            get_template_directory_uri() . '/assets/js/events.js',
+            get_theme_file_uri('/assets/js/events.js'),
             array('fullcalendar'),
-            wp_get_theme()->get('Version'),
+            filemtime(get_theme_file_path('/assets/js/events.js')),
             true
         );
 
@@ -1072,6 +1118,15 @@ function masca_enqueue_event_assets() {
             array(
                 'endpoint' => esc_url_raw(rest_url('masca/v1/events')),
             )
+        );
+    }
+
+    if (is_page('events') || is_singular('masca_event')) {
+        wp_enqueue_style(
+            'masca-events',
+            get_theme_file_uri('/assets/css/events.css'),
+            array(),
+            filemtime(get_theme_file_path('/assets/css/events.css'))
         );
     }
 }

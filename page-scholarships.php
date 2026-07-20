@@ -7,7 +7,7 @@ get_header();
 $app=home_url('/application/');
 $program=home_url('/ambassador-program/');
 ?>
-<main class="scholarships-page">
+<main id="main-content" class="scholarships-page">
 
 <section class="sp-hero">
 <div class="sp-container">

@@ -5,7 +5,7 @@
 get_header();
 ?>
 
-<main id="primary" class="gallery-single">
+<main id="main-content" class="gallery-single">
     <?php while ( have_posts() ) : the_post(); ?>
         <article <?php post_class(); ?>>
             <section class="gal-single-hero">

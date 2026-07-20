@@ -9,7 +9,7 @@ get_header();
 $history_uri = get_stylesheet_directory_uri() . '/assets/images/history';
 ?>
 
-<main class="masca-history">
+<main id="main-content" class="masca-history">
     <section class="history-hero" aria-labelledby="history-title">
         <div class="history-shell history-hero__inner">
             <div class="history-hero__copy history-reveal">

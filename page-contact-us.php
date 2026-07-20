@@ -17,7 +17,7 @@ $contact_form_rendered = shortcode_exists('contact-form-7')
     && strpos($contact_form, 'wpcf7') !== false;
 ?>
 
-<main id="primary" class="contact-page">
+<main id="main-content" class="contact-page">
     <header class="standard-page__header contact-hero">
         <div class="site-container standard-page__header-inner">
             <h1 class="standard-page__title">Contact Us</h1>

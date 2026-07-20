@@ -94,6 +94,7 @@ $ambassadors = [
 ];
 ?>
 
+<main id="main-content">
 <article class="ambassadors-page">
     <header class="standard-page__header">
         <div class="site-container standard-page__header-inner">
@@ -118,7 +119,10 @@ $ambassadors = [
                             $ambassador['image']
                         ); ?>"
                         alt="<?php echo esc_attr($ambassador['name']); ?>"
+                        width="600"
+                        height="750"
                         loading="lazy"
+                        decoding="async"
                     >
                 </figure>
 
@@ -145,5 +149,6 @@ $ambassadors = [
         <?php endforeach; ?>
     </div>
 </article>
+</main>
 
 <?php get_footer(); ?>

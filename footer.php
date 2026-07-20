@@ -223,7 +223,7 @@
           Contact Us
         </a>
 
-        <a href="#page" class="site-footer__top-link">
+        <a href="#page-top" class="site-footer__top-link">
           Back to top
           <span aria-hidden="true">↑</span>
         </a>
