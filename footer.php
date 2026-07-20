@@ -215,10 +215,6 @@
       </p>
 
       <div class="site-footer__legal">
-        <a href="<?php echo esc_url(home_url('/terms-and-conditions/')); ?>">
-          Terms &amp; Conditions
-        </a>
-
         <a href="<?php echo esc_url(masca_custom_page_url('contact-us')); ?>">
           Contact Us
         </a>
