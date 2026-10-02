@@ -362,23 +362,7 @@ async function initializeMascaCalendar() {
     return new Date(`${dateString}T12:00:00`);
   };
 
-  const upcomingEvents = mascaEvents
-    .filter((event) => parseEventDate(event.date) >= today)
-    .sort(
-      (firstEvent, secondEvent) =>
-        parseEventDate(firstEvent.date) -
-        parseEventDate(secondEvent.date)
-    );
-
-  const initialEvent = upcomingEvents[0] || mascaEvents[0];
-
-  let visibleMonth = initialEvent
-    ? new Date(
-        parseEventDate(initialEvent.date).getFullYear(),
-        parseEventDate(initialEvent.date).getMonth(),
-        1
-      )
-    : new Date(today.getFullYear(), today.getMonth(), 1);
+  let visibleMonth = new Date(today.getFullYear(), today.getMonth(), 1);
 
   let lastFocusedElement = null;
 
